@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="DLIP_Tutorial_OpenCV_Image.vcxproj" Id="b8e930a0-9940-4e62-820a-ab41754a5375" />
+</Solution>
