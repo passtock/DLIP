@@ -1,0 +1,4 @@
+C:/Users/passp/source/repos/DLIP/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/passp/source/repos/DLIP/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/passp/source/repos/DLIP/build/Lab/DLIP_LAB_GEAR/CMakeFiles/LAB_GEAR.dir
+C:/Users/passp/source/repos/DLIP/build/Lab/DLIP_LAB_GEAR/CMakeFiles/ALL_BUILD.dir

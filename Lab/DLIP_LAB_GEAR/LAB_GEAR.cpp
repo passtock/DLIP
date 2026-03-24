@@ -1,4 +1,4 @@
-#include <opencv2/opencv.hpp>
+ï»¿#include <opencv2/opencv.hpp>
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -8,35 +8,34 @@ using namespace cv;
 using namespace std;
 
 int main() {
-    vector<string> file_names = {"Gear1.jpg", "Gear2.jpg", "Gear3.jpg", "Gear4.jpg"};
+
+
+    vector<string> file_names = { "Gear1.jpg", "Gear2.jpg", "Gear3.jpg", "Gear4.jpg" };
 
     for (int idx = 0; idx < file_names.size(); idx++) {
         string file_name = file_names[idx];
-        string prefix = "[Gear" + to_string(idx + 1) + "] "; 
+        string prefix = "[Gear" + to_string(idx + 1) + "] ";
 
-        // 1. ÀÌ¹ÌÁö ÀĞ±â
+        // 1. ì´ë¯¸ì§€ ì½ê¸°
         Mat img_color = imread(file_name, IMREAD_COLOR);
         if (img_color.empty()) {
-            cerr << prefix << "ÀÌ¹ÌÁö¸¦ ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù." << endl;
-            continue; // ´ÙÀ½ ÀÌ¹ÌÁö·Î ³Ñ¾î°¨
+            cerr << prefix << "ì´ë¯¸ì§€ë¥¼ ë¶ˆëŸ¬ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
+            continue; // ë‹¤ìŒ ì´ë¯¸ì§€ë¡œ ë„˜ì–´ê°
         }
 
         Mat img_gray;
         cvtColor(img_color, img_gray, COLOR_BGR2GRAY);
 
         // ---------------------------------------------------------
-        // 2. Laplacian ÇÊÅÍ ¹× ÀÌÁøÈ­, ÆØÃ¢
+        // 2. Laplacian í•„í„° ë° ì´ì§„í™”
         // ---------------------------------------------------------
         Mat img_laplacian, edges_binary;
         Laplacian(img_gray, img_laplacian, CV_16S, 3);
         convertScaleAbs(img_laplacian, img_laplacian);
         threshold(img_laplacian, edges_binary, 30, 255, THRESH_BINARY);
 
-        Mat dilate_kernel = getStructuringElement(MORPH_RECT, Size(3, 3));
-        dilate(edges_binary, edges_binary, dilate_kernel);
-
         // ---------------------------------------------------------
-        // 3. ¼Ö¸®µå(Solid) ¸¶½ºÅ© »ı¼º
+        // 3. ì†”ë¦¬ë“œ(Solid) ë§ˆìŠ¤í¬ ìƒì„±
         // ---------------------------------------------------------
         vector<vector<Point>> edge_contours;
         findContours(edges_binary, edge_contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
@@ -45,7 +44,7 @@ int main() {
         drawContours(mask_solid, edge_contours, -1, Scalar(255), FILLED);
 
         // ---------------------------------------------------------
-        // 4. °Å¸® º¯È¯À¸·Î »Ñ¸®¿ø ¸öÃ¼ ºĞ¸®
+        // 4. ê±°ë¦¬ ë³€í™˜ìœ¼ë¡œ ë¿Œë¦¬ì› ëª¸ì²´ ë¶„ë¦¬
         // ---------------------------------------------------------
         Mat dist;
         distanceTransform(mask_solid, dist, DIST_L2, 5);
@@ -65,7 +64,7 @@ int main() {
         morphologyEx(mask_teeth, mask_teeth, MORPH_OPEN, small_kernel);
 
         // ---------------------------------------------------------
-        // 5. ÀÌ»¡ ¸éÀû °è»ê ¹× ºÒ·® ÆÇÁ¤
+        // 5. ì´ë¹¨ ë©´ì  ê³„ì‚° ë° ë¶ˆëŸ‰ íŒì •
         // ---------------------------------------------------------
         vector<vector<Point>> all_teeth_contours;
         findContours(mask_teeth, all_teeth_contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
@@ -82,33 +81,32 @@ int main() {
             total_area += contourArea(contours[i]);
         }
         double avg_area = contours.empty() ? 0.0 : total_area / contours.size();
-        
-        // Á¤»ó ÀÌ»¡ ±âÁØ (Æò±ÕÀÇ 90% ~ 110%)
-        double min_normal_area = avg_area * 0.9; 
-        double max_normal_area = avg_area * 1.1; 
+
+        // ì •ìƒ ì´ë¹¨ ê¸°ì¤€ (í‰ê· ì˜ 90% ~ 110%)
+        double min_normal_area = avg_area * 0.9;
+        double max_normal_area = avg_area * 1.1;
 
         // ---------------------------------------------------------
-        // 6. °á°ú ·»´õ¸µ¿ë Äµ¹ö½º »ı¼º
+        // 6. ê²°ê³¼ ë Œë”ë§ìš© ìº”ë²„ìŠ¤ ìƒì„±
         // ---------------------------------------------------------
-        // ¡Ú ¼öÁ¤µÊ: 2, 3¹ø ÀÌ¹ÌÁö´Â ¿øº»À» º¹»çÇÏÁö ¾Ê°í ¿ÏÀüÈ÷ ±î¸¸ ¹è°æ(Zeros) »ç¿ë
-        Mat img_res2 = Mat::zeros(img_color.size(), CV_8UC3); // ±î¸¸ ¹è°æ + ÀÌ»¡¼± + ÅØ½ºÆ®
-        Mat img_res3 = Mat::zeros(img_color.size(), CV_8UC3); // ±î¸¸ ¹è°æ + ÀÌ»¡¼± (ÅØ½ºÆ® ¾øÀ½)
-        Mat img_res4 = img_color.clone(); // 4¹øÂ°´Â ¿øº» ¹è°æ À§¿¡ ºÒ·® Ç¥±â
+        Mat img_res2 = Mat::zeros(img_color.size(), CV_8UC3); // ê¹Œë§Œ ë°°ê²½ + ì´ë¹¨ì„  + í…ìŠ¤íŠ¸
+        Mat img_res3 = Mat::zeros(img_color.size(), CV_8UC3); // ê¹Œë§Œ ë°°ê²½ + ì´ë¹¨ì„  (í…ìŠ¤íŠ¸ ì—†ìŒ)
+        Mat img_res4 = img_color.clone(); // 4ë²ˆì§¸ëŠ” ì›ë³¸ ë°°ê²½ ìœ„ì— ë¶ˆëŸ‰ í‘œê¸°
 
         int defect_count = 0;
 
         for (size_t i = 0; i < contours.size(); i++) {
             double area = contourArea(contours[i]);
-            
+
             bool is_defect = (area < min_normal_area || max_normal_area < area);
-            
+
             if (is_defect) defect_count++;
 
             Scalar color = is_defect ? Scalar(0, 0, 255) : Scalar(0, 255, 0);
 
             drawContours(img_res2, contours, (int)i, color, 2);
             drawContours(img_res3, contours, (int)i, color, 2);
-            
+
             if (is_defect) {
                 drawContours(img_res4, contours, (int)i, Scalar(0, 0, 255), 2);
             }
@@ -121,24 +119,25 @@ int main() {
             }
         }
 
-        cout << "\n\n[" << file_name << "] ºĞ¼® °á°ú" << endl;
+        cout << "\n\n[" << file_name << "] ë¶„ì„ ê²°ê³¼" << endl;
         cout << "============================================" << endl;
-        cout << "| " << left << setw(10) << "ÀÌ»¡ °³¼ö" 
-             << "| " << setw(12) << "Æò±Õ ¸éÀû" 
-             << "| " << setw(12) << "ºÒ·® °³¼ö" << " |" << endl;
+        cout << "| " << left << setw(10) << " ì´ë¹¨ ê°œìˆ˜"
+            << "| " << setw(12) << " í‰ê·  ë©´ì "
+            << "| " << setw(12) << "ë¶ˆëŸ‰ ê°œìˆ˜" << " |" << endl;
         cout << "--------------------------------------------" << endl;
-        cout << "| " << left << setw(10) << contours.size() 
-             << "| " << setw(12) << fixed << setprecision(1) << avg_area 
-             << "| " << setw(12) << defect_count << " |" << endl;
+        cout << "| " << left << setw(10) << contours.size()
+            << "| " << setw(12) << fixed << setprecision(1) << avg_area
+            << "| " << setw(12) << defect_count << " |" << endl;
         cout << "============================================" << endl;
 
         imshow(prefix + "1. Original", img_color);
         imshow(prefix + "2. Teeth Area Only", img_res2);
         imshow(prefix + "3. Teeth Outlines Only", img_res3);
         imshow(prefix + "4. Missing Teeth", img_res4);
+		
     }
 
-    cout << "\n>> ¸ğµç ºĞ¼®ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. Ã¢¿¡¼­ ¾Æ¹« Å°³ª ´©¸£¸é Á¾·áµË´Ï´Ù..." << endl;
+    cout << "\n>> ëª¨ë“  ë¶„ì„ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ì°½ì—ì„œ ì•„ë¬´ í‚¤ë‚˜ ëˆ„ë¥´ë©´ ì¢…ë£Œë©ë‹ˆë‹¤..." << endl;
     waitKey(0);
 
     return 0;
