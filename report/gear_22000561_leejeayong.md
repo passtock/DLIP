@@ -29,16 +29,15 @@ The system will calculate the following:
 The algorithm follows these main steps:
 1. **Image Load & Grayscale Conversion:** Read the image and convert it to grayscale.
 2. **Edge Extraction:** Apply a Laplacian filter to extract edges and threshold it to a binary image.
-3. **Morphology (Dilation):** Apply dilation to close any gaps in the edges.
-4. **Solid Gear Masking:** Find boundaries of the object and fill the contours to create a solid mask of the entire gear.
-5. **Inner Body Separation:** Apply Distance Transform to the solid mask to find the center and the root radius of the gear. Create a mask for the inner circular body.
-6. **Teeth Extraction:** Subtract the inner body mask from the solid gear mask to isolate the teeth. Apply morphological opening to denoise.
-7. **Defect Detection:** Find contours of the isolated teeth, calculate their areas, and compute the average area. A tooth is considered defective if its area is less than 90% or more than 110% of the average area (i.e., broken or missing).
+3. **Solid Gear Masking:** Find boundaries of the object and fill the contours to create a solid mask of the entire gear.
+4. **Inner Body Separation:** Apply Distance Transform to the solid mask to find the center and the root radius of the gear. Create a mask for the inner circular body.
+5. **Teeth Extraction:** Subtract the inner body mask from the solid gear mask to isolate the teeth. Apply morphological opening to denoise.
+6. **Defect Detection:** Find contours of the isolated teeth, calculate their areas, and compute the average area. A tooth is considered defective if its area is less than 90% or more than 110% of the average area (i.e., broken or missing).
 
 ## 2. Procedure
 
-### Edge Detection & Morphology
-Since the gears share similar intensity values with some parts of the background, detecting edges directly is more robust than simple thresholding. Thus, a `Laplacian` filter (kernel size 3) is applied to the grayscale image. The result is binarized using a threshold value of 30. To ensure the edges form a closed contour around the gear, `dilate` with a 3x3 rectangular kernel is applied.
+### Edge Detection 
+Since the gears share similar intensity values with some parts of the background, detecting edges directly is more robust than simple thresholding. Thus, a `Laplacian` filter (kernel size 3) is applied to the grayscale image. The result is binarized using a threshold value of 30. 
 
 ### Contour and Solid Mask
 `findContours` is applied to the binarized edges to find the external boundaries. The contours are then filled using `drawContours` with `FILLED` mode to generate a solid mask covering the entire gear.
