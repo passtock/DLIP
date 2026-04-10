@@ -1,0 +1,277 @@
+<?xml version="1.0" standalone="yes"?>
+<CalibrationProject>
+  <xs:schema id="CalibrationProject" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="CalibrationProject" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ObjWidth" type="xs:int" minOccurs="0" />
+                <xs:element name="ObjHeight" type="xs:int" minOccurs="0" />
+                <xs:element name="FieldSize" type="xs:double" minOccurs="0" />
+                <xs:element name="DetectionMethod" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="images">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImagePath" type="xs:string" minOccurs="0" />
+                <xs:element name="SourceType" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImageCount" type="xs:int" minOccurs="0" />
+                <xs:element name="focus_lenX" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenY" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalX" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalY" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist1" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist2" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist3" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist4" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenX_er" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenY_er" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalX_er" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalY_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist1_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist2_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist3_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist4_er" type="xs:double" minOccurs="0" />
+                <xs:element name="dc_AllImage_errX" type="xs:double" minOccurs="0" />
+                <xs:element name="dc_AllImage_errY" type="xs:double" minOccurs="0" />
+                <xs:element name="Calib_Date" type="xs:string" minOccurs="0" />
+                <xs:element name="Calib_Type" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <data>
+    <ObjWidth>5</ObjWidth>
+    <ObjHeight>8</ObjHeight>
+    <FieldSize>28</FieldSize>
+    <DetectionMethod>3</DetectionMethod>
+  </data>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091003.046.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091027.312.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091031.906.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091032.078.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091033.171.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091034.156.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091035.671.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091037.203.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091039.640.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091041.937.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091042.421.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091044.609.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091045.515.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091046.703.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091048.234.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091050.031.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091051.046.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091056.734.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085759_I.mp4_20160719_091103.296.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091110.046.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091112.468.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091114.078.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091115.203.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091118.921.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091121.859.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091126.484.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091129.390.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091131.546.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091135.546.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085836_I.mp4_20160719_091138.203.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091144.609.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091146.640.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091149.296.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091151.953.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091200.218.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091209.546.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091212.343.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091214.656.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091217.171.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091222.625.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091224.703.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091227.796.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091228.296.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091230.593.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085913_I.mp4_20160719_091235.312.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085950_I.mp4_20160719_091250.015.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085950_I.mp4_20160719_091251.078.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>C:\Users\Jan\Desktop\MV\2017\week9\calibration\chessboardIMGs\mdr0_20160719_085950_I.mp4_20160719_091253.328.jpg</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <results>
+    <ImageCount>43</ImageCount>
+    <focus_lenX>834.58755288917052</focus_lenX>
+    <focus_lenY>847.42845271147621</focus_lenY>
+    <PrincipalX>593.71226204720074</PrincipalX>
+    <PrincipalY>355.08244223377216</PrincipalY>
+    <Dist1>-0.4079357365071829</Dist1>
+    <Dist2>0.14181447141681008</Dist2>
+    <Dist3>-0.001915596395994537</Dist3>
+    <Dist4>0.00723345381229942</Dist4>
+    <focus_lenX_er>3.0136849880218506</focus_lenX_er>
+    <focus_lenY_er>3.2027108669281006</focus_lenY_er>
+    <PrincipalX_er>4.1504969596862793</PrincipalX_er>
+    <PrincipalY_er>3.6239156723022461</PrincipalY_er>
+    <Dist1_er>0.0040104370564222336</Dist1_er>
+    <Dist2_er>0.00959894061088562</Dist2_er>
+    <Dist3_er>0.00072586012538522482</Dist3_er>
+    <Dist4_er>0.00073107174830511212</Dist4_er>
+    <dc_AllImage_errX>0.43872809363302079</dc_AllImage_errX>
+    <dc_AllImage_errY>0.59301692155121377</dc_AllImage_errY>
+    <Calib_Date>2017-10-26 오전 10:17:07</Calib_Date>
+    <Calib_Type>2</Calib_Type>
+  </results>
+</CalibrationProject>
