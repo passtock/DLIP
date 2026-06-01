@@ -4,9 +4,9 @@
 
 **Author:** 22000561 leejeayong
 
-**Github:** [본인 Github 링크 입력]
+**Github:** [깃허브링크](https://github.com/passtock/DLIP/tree/master/Lab/DLIP_Lab_CNN_detection)
 
-**Demo Video:** [\[Youtube 링크 입력\]](https://youtu.be/-TseJdeAbVA)
+**Demo Video:** [유튜브링크](https://youtu.be/-TseJdeAbVA)
 
 ***
 
@@ -139,9 +139,11 @@ The script is set to run exactly up to 1500 frames (`frame_idx == 1500`). The nu
 * The middle white SUV (spot #7), which was initially missed by YOLO bounding boxes due to tree shadows, was successfully detected using the lowered confidence and segmentation mask.
 
 **Output Statistics**
-The program successfully outputted exactly 1500 lines to `counting_22000561.txt` in the requested format (`Frame,EmptySpaces`).
+The program successfully outputted exactly 1501 lines (frames 0 to 1500) to `counting_22000561.txt` in the requested format (`Frame,OccupiedSpaces`).
 
-The objectives of dynamic slot generation and high-accuracy detection were fully achieved.
+When compared to the provided ground truth answer key (`LAB_Parking_counting_result_answer_student_modified.txt`), the model achieved a counting accuracy of **98.53% (1479 / 1501 frames matched perfectly)**. 
+
+The objectives of dynamic slot generation, high-accuracy detection, and handling shadows were fully achieved.
 
 ***
 

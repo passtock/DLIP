@@ -283,7 +283,7 @@ def main():
             if not ret:
                 break
                 
-            if frame_idx >= 1500:
+            if frame_idx > 1500:
                 print("Reached 1500 frames limit. Stopping.")
                 break
                 
@@ -301,8 +301,7 @@ def main():
             occupied_count = draw_visuals(annotated_frame, parking_spots, occupancy, detections)
             
             # 5. Save results
-            empty_spaces = len(parking_spots) - occupied_count
-            f.write(f"{frame_idx},{empty_spaces}\n")
+            f.write(f"{frame_idx},{occupied_count}\n")
             out.write(annotated_frame)
             
             # Display
